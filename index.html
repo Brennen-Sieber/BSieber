@@ -49,13 +49,13 @@
 </div>   <!-- end class= 'container' -->
 
 <script>
-       let app = Vue.createApp({
+       const app = Vue.createApp({
             data() {     // returns an object of data
                 return {
                     tickets: [],           // array to hold student data
                 }
             },
-            created() {      // section executes as page loads
+            window.onload() {      // section executes as page loads
                 this.getData()  // load json data as page loads
             },
             methods: {    // ajax request
