@@ -36,7 +36,7 @@
                   <th>MPH Over</th>
                   <th>Violator Sex</th>
               </tr>
-              <tr v-for = "ticket in tickets">
+              <tr v-for = "ticket in tickets" :key="ticket.tid">
                   <td>{{ticket.tid}}</td>
                   <td>{{ticket.stop_time}}</td>
                   <td>{{ticket.posted_speed}}</td>
@@ -56,7 +56,7 @@
                 }
             },
             created() {      // section executes as page loads
-                this.getData()  // load json data as page loads
+                this.getData();  // load json data as page loads
             },
             methods: {    // ajax request
                 async getData() {
@@ -66,7 +66,7 @@
             }
           })
       
-      app.mount('#ticketApp')   //in which div to mount the vue app
+      app.mount('#ticketApp');   //in which div to mount the vue app
 		  
 
 </script>
