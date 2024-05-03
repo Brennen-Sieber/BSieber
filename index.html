@@ -36,7 +36,7 @@
                   <th>MPH Over</th>
                   <th>Violator Sex</th>
               </tr>
-              <tr v-for = "ticket in tickets">
+              <tr v-for = "item in tickets">
                   <td>{{ticket.tid}}</td>
                   <td>{{ticket.stop_time}}</td>
                   <td>{{ticket.posted_speed}}</td>
@@ -61,8 +61,7 @@
             methods: {    // ajax request
                 async getData() {
                     const response = await fetch('tickets1.json')
-                    this.tickets = await response.json()
-                    //tickets = data.filter( (item) => item.major == majSelect );     
+                    this.tickets = await response.json()  
                 },
             }
           })
